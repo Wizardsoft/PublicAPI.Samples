@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Dummy2";
+}
+@model PublicAPI.Samples.Models.DummyModel
+@using (Html.BeginForm("Dummy2", "Home", FormMethod.Get, new { enctype = "multipart/form-data" }))
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            Dummy 2
+                        </h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="label label-danger">ID</span>
+                                @Html.TextBoxFor(x => x.id, new { style = "max-width:none!important", @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <br />
+                                <input type="submit" id="btnDummy1" value="Accept" class="btn btn-primary-submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

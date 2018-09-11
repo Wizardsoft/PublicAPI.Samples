@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "DummyResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            @Html.Raw(@ViewData["Title"])
+                        </h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <p>@ViewData["DummyMessage"]</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <br />
+                                <input type="submit" id="btnAccept" value="Accept" class="btn btn-primary-submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

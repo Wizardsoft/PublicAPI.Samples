@@ -1,23 +1,22 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1 class="panel-title">
-                        WizardSoft oAuth2 Test Dummy
-                    </h1>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            Put your text here!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<div class="jumbotron">
+    <h1>WizardSoft Public API Authintication</h1>
+    <h2>Authorization Code Flow Sample</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Scopes</h3>
+        @using (Html.BeginForm())
+        {
+            <p>
+                <input type="hidden" name="scopes" style="width: 200px" value="openid profile read write offline_access" />
+            </p>
+            
+            <button name="OK" class="btn btn-info">Request For Login</button>
+        }
     </div>
 </div>

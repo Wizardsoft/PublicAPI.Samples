@@ -101,7 +101,7 @@ namespace MvcCodeFlowClientManual.Controllers
             var cert = Certificate.Load();
             var parameters = new TokenValidationParameters
             {
-                ValidAudience = "2grVswCTdfiQ8fnT3czpj2IGfmkRSmjfQwcaOod2J0JdhHljDr",
+                ValidAudience = Constants.client_id,
                 ValidIssuer = Constants.BaseAddress,
                 IssuerSigningToken = new X509SecurityToken(cert)
             };

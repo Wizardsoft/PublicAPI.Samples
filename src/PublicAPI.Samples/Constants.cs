@@ -16,7 +16,7 @@ namespace MvcCodeFlowClientManual
         public const string IdentityTokenValidationEndpoint = BaseAddress + "/connect/identitytokenvalidation";
         public const string TokenRevocationEndpoint = BaseAddress + "/connect/revocation";
 
-        public const string client_id = "2grVswCTdfiQ8fnT3czpj2IGfmkRSmjfQwcaOod2J0JdhHljDr";
-        public const string client_secret = "6hMhXqzEKXVHmH5DFG3PMSyLfU5KmbN8fTDHhoMiNEFs7UWSRj3lQDSKuHBOONiugUtwTEj6GzbaxKMlnO2XWE6HHFSwBRqOkBl";
+        public const string client_id = "cRkEid0UlzLt1hnNE9YzzKwz2miBjFDAXIOCAVFwrSfmwU7aM2";
+        public const string client_secret = "zPAO8KyhaZ7aDPM5TCMtTK9OWc32JjDQkZG0lnsBgnGUjeRO7QvYeDszLgT1rgdJDjEzKxX3gF4b2ICtMEvZ8TlA1kmO1FYd4s7";
     }
 }

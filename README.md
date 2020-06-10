@@ -37,7 +37,7 @@ The next step is to exchange your authorization code for a token. You'll need to
 When this call is made successfully an access token, refresh token and token expiry will be passed back in JSON format:
 1. `access_token` - The user access token.
 2. `refresh_token`- The user refresh token. This can be used to request a new access token on the user's behalf.
-3. `expires_in` - How long until the access token expires. Access tokens will expire after 24 hours and refresh tokens will expire after 48 hours.
+3. `expires_in` - How long until the access token expires. Access tokens will expire after 24 hours and refresh tokens will expire after 60 days.
 
 Accessing End points You can now use this access token to create, read and update data on a user's behalf. When making a request to an API endpoint ensure that the following headers are set:
 
@@ -47,4 +47,3 @@ Accessing End points You can now use this access token to create, read and updat
 For example making a request to any endpoint ex. https://api.wizardsoft.com/sandbox/demoapi with set the headers of authorization which will return the data of sample data of demo api. 
 
 **Note: If you do not pass the accept header the API will not give you access to the endpoint!**
-

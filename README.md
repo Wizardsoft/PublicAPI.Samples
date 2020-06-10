@@ -40,3 +40,7 @@ Accessing End points You can now use this access token to create, read and updat
 `Accept: application/json`
 `Authorization: Bearer {YOUR_ACCESS_TOKEN}`
 
+For example making a request to any endpoint ex. https://api.wizardsoft.com/sandbox/demoapi with set the headers of authorization which will return the data of sample data of demo api. 
+
+**Note: If you do not pass the accept header the API will not give you access to the endpoint!**
+

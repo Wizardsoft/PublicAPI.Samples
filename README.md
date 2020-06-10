@@ -1,5 +1,6 @@
 # PublicAPI.Samples
 
-A Sample application used to demonstate how to integrate with Wizardoft's API.
+Welcome to Wizardsoft API integration platform using OAuth 2.0 Authorization Code Workflow to your application to authorize user.
 
-You will need to update the `ClientID` and `ClientSecret` fields in the web.config
+You can add your `ClientID` and `ClientSecret` fields in the web.config/appsettings.json/constants etc.
+

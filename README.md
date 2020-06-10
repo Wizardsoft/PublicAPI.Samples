@@ -10,7 +10,7 @@ At first you need to register your app from https://api.wizardsoft.com/RegisterA
 
 Your application registration will need to be approved by our Partner Management team before your `ClientID` and `ClientSecret` are activated. This usually takes roughly 48 hours. They will be in touch if you have not already Signed the Recruit Wizard API Partner Agreement
 
-If you require expediated access please contact [partners@recruitwizard.com](partners@recruitwizard.com)
+If you require expediated access please contact [partners@recruitwizard.com](mailto:partners@recruitwizard.com)
 
 ## Authorization
 First you need to retrive an authorization code for further process. When you will send request to https://api.wizardsoft.com/core

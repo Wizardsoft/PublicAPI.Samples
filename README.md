@@ -16,11 +16,11 @@ If you require expediated access please contact [partners@recruitwizard.com](mai
 First you need to retrive an authorization code for further process. When you will send request to https://api.wizardsoft.com/core
 with the parameters using FormUrlEncodded or query string.
 
-1. client_id - The API key provided to you by `Recruit Wizard`.
-2. redirect_uri - The URL the user should be redirected back to after they've confirmed they want to give you access to the API.
-3. scope - The scopes you wish to request separated by spaces. It's all scopes that will work for your application.
-4. response_type - This should always be the value 'code'.
-5. state - Pass a unique value in this field and it will be returned with the access code.
+1. `client_id` - The API key provided to you by `Recruit Wizard`.
+2. `redirect_uri` - The URL the user should be redirected back to after they've confirmed they want to give you access to the API.
+3. `scope` - The scopes you wish to request separated by spaces. It's all scopes that will work for your application.
+4. `response_type` - This should always be the value 'code'.
+5. `state` - Pass a unique value in this field and it will be returned with the access code.
 
 https://api.wizardsoft.com/core?response_type=code&client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}&state={state}
 
@@ -28,11 +28,11 @@ If the authorization was successful, the user will be redirected back to the red
 
 The next step is to exchange your authorization code for a token. You'll need to pass the authorization code received to the token endpoint (https://api.wizardsoft.com/core/token) using POST and include the following items in the query string.
 
-1. client_id - The API key provided to you by `Recruit Wizard`.
-2. client_secret - The API secret provided to you by `Recruit Wizard`.
-3. grant_type - The grant type you are requesting, in this case, the value should always be 'authorization_code',
-4. code - The code that was returned in the authorization code request.
-5. redirect_uri - The redirect URI used in your call to the authorization endpoint.
+1. `client_id` - The API key provided to you by `Recruit Wizard`.
+2. `client_secret` - The API secret provided to you by `Recruit Wizard`.
+3. `grant_type` - The grant type you are requesting, in this case, the value should always be 'authorization_code',
+4. `code` - The code that was returned in the authorization code request.
+5. `redirect_uri` - The redirect URI used in your call to the authorization endpoint.
 
 When this call is made successfully an access token, refresh token and token expiry will be passed back in JSON format:
 1. `access_token` - The user access token.
@@ -47,3 +47,24 @@ Accessing End points You can now use this access token to create, read and updat
 For example making a request to any endpoint ex. https://api.wizardsoft.com/sandbox/demoapi with set the headers of authorization which will return the data of sample data of demo api. 
 
 **Note: If you do not pass the accept header the API will not give you access to the endpoint!**
+
+Access token has specific timeout when you are requesting with your bearer token. When the access_token will be expire then you have to collect a new access_token and refresh_token. **(One refresh_token is one time use only)**
+
+In term of refresh token you have pass refresh_token as grant_type. These are the parameters for refresh token.
+
+1. `client_id` - The API key provided to you by `Recruit Wizard`
+2. `client_secret` - The API secret provided to you by `Recruit Wizard`
+3. `grant_type` - The grant type you are requesting, in this case, the value should always be 'refresh_token',
+4. `refresh_token` - The refresh token for the user you wish to refresh.
+5. `redirect_uri` - The redirect URI used in your call to the authorization endpoint.
+6. `scope` - This will not work here. It will collect token based on previous refresh token.
+
+When this call is made successfully an access token, refresh token and token expiry will be passed back in JSON format:
+
+1. `access_token` - The recruiters access token.
+2. `refresh_token` - The recruiters refresh token. This can be used to request a new access token on the user's behalf.
+3. `expires_in` - How long until the access token expires. Access tokens will expire after 48 hours and refresh tokens will expire after 60 days.
+
+
+
+

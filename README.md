@@ -1,20 +1,23 @@
 # PublicAPI.Samples
 
-Welcome to Recruit Wizard Public API integration platform using OAuth 2.0 Authorization Code Workflow to your application to authorize user.
+Welcome to Recruit Wizard API documentation. It is an OAuth 2.0 API that uses the Authorization code workflow to authorize users.
 
-You can add your `ClientID` and `ClientSecret` fields in the web.config/appsettings.json/constants etc.
+You can add your `client_id` and `client_secret` fields in the web.config.
 
 ## Setup Instruction
 
-At first you need to register your app from https://api.wizardsoft.com/RegisterApp. Here you need to provide at least one redirect url which will responsible for OAuth Redirect Callback. After successful registration you will get ClientId and Client Secret.
+To recieve API Access you will need to register your app [here](https://api.wizardsoft.com/RegisterApp). 
 
-Your application registration will need to be approved by our Partner Management Team before your API Access is are activated. This usually takes roughly 48 hours. They will be in touch if you have not already Signed the Recruit Wizard API Partner Agreement
+You need to provide at least one redirect url which will responsible for OAuth Redirect Callback. 
 
-If you require expediated access please contact [partners@recruitwizard.com](mailto:partners@recruitwizard.com)
+Your application registration will need to be approved by our Partner Management Team before your API Access is are activated. This usually takes roughly 48 hours.
+
+They will be in touch if you have not already Signed the Recruit Wizard API Partner Agreement
+
+If you require expediated access, or have any questions please contact [partners@recruitwizard.com](mailto:partners@recruitwizard.com)
 
 ## Authorization
-First you need to retrive an authorization code for further process. When you will send request to https://api.wizardsoft.com/core
-with the parameters using FormUrlEncodded or query string.
+The first step to getting one of your users connected to the API is to request an access code. Your user should be taken to our authorization code URL and the following details should be included in the query string:
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `redirect_uri` - The URL the user should be redirected back to after they've confirmed they want to give you access to the API.
@@ -22,11 +25,9 @@ with the parameters using FormUrlEncodded or query string.
 4. `response_type` - This should always be the value 'code'.
 5. `state` - Pass a unique value in this field and it will be returned with the access code.
 
-https://api.wizardsoft.com/core?response_type=code&client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}&state={state}
+Example: https://api.wizardsoft.com/core?response_type=code&client_id={client_id}&redirect_uri={redirect_uri}&scope=read+write&state=1234
 
-If the authorization was successful, the user will be redirected back to the redirect_uri along with a token in the query string value code.
-
-The next step is to exchange your authorization code for a token. You'll need to pass the authorization code received to the token endpoint (https://api.wizardsoft.com/core/token) using POST and include the following items in the query string.
+If the authorization was successful, the user will be redirected back to the redirect_uri along with a token in the query string value code. Request a Token using your authorization code. The next step is to exchange your authorization code for a token. You'll need to pass the authorization code received to the token endpoint (https://api.wizardsoft.com/core/token) using POST and include the following items in the query string:
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `client_secret` - The API secret provided to you by `Recruit Wizard`.
@@ -64,7 +65,3 @@ When this call is made successfully an access token, refresh token and token exp
 1. `access_token` - The recruiters access token.
 2. `refresh_token` - The recruiters refresh token. This can be used to request a new access token on the user's behalf.
 3. `expires_in` - How long until the access token expires. Access tokens will expire after 48 hours and refresh tokens will expire after 60 days.
-
-
-
-

@@ -49,19 +49,15 @@ For example making a request to any endpoint ex. https://api.wizardsoft.com/sand
 
 **Note: If you do not pass the accept header the API will not give you access to the endpoint!**
 
-Access token has specific timeout when you are requesting with your bearer token. When the access_token will be expire then you have to collect a new access_token and refresh_token. **(One refresh_token is one time use only)**
+Refreshing a token To stop users going through the authorization process again when their access tokens expire, you can programmatically refresh them on their behalf using the refresh token endpoint. This is the same as the authorization endpoint (https://api.wizardsoft.com/core/token), except you pass a grant type of 'refresh_token' in the query string instead:
 
-In term of refresh token you have pass refresh_token as grant_type. These are the parameters for refresh token.
-
-1. `client_id` - The API key provided to you by `Recruit Wizard`
-2. `client_secret` - The API secret provided to you by `Recruit Wizard`
+1. `client_id` - The API key provided to you by `Recruit Wizard`.
+2. `client_secret` - The API secret provided to you by `Recruit Wizard`.
 3. `grant_type` - The grant type you are requesting, in this case, the value should always be 'refresh_token',
-4. `refresh_token` - The refresh token for the user you wish to refresh.
+4. `code` - The code that was returned in the authorization code request.
 5. `redirect_uri` - The redirect URI used in your call to the authorization endpoint.
-6. `scope` - This will not work here. It will collect token based on previous refresh token.
 
 When this call is made successfully an access token, refresh token and token expiry will be passed back in JSON format:
-
-1. `access_token` - The recruiters access token.
-2. `refresh_token` - The recruiters refresh token. This can be used to request a new access token on the user's behalf.
-3. `expires_in` - How long until the access token expires. Access tokens will expire after 48 hours and refresh tokens will expire after 60 days.
+1. `access_token` - The user access token.
+2. `refresh_token`- The user refresh token. This can be used to request a new access token on the user's behalf.
+3. `expires_in` - How long until the access token expires. Access tokens will expire after 24 hours and refresh tokens will expire after 60 days.

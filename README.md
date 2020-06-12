@@ -2,6 +2,8 @@
 
 Welcome to Recruit Wizard API documentation. It is an OAuth 2.0 API that uses the Authorization code workflow to authorize users.
 
+Full Swagger Documentation can be [found here](https://api.wizardsoft.com/swagger)
+
 You can add your `client_id` and `client_secret` fields in the web.config.
 
 ## Setup Instruction

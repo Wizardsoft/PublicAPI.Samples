@@ -23,7 +23,7 @@ The first step to getting one of your users connected to the API is to request a
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `redirect_uri` - The URL the user should be redirected back to after they've confirmed they want to give you access to the API.
-3. `scope` - The scopes you wish to request separated by spaces. It's all scopes that will work for your application.
+3. `scope` - The scopes you wish to request separated by spaces. By default this will be `read` and `write`. You should also include `offline_access` if you require access to programtically refresh access to the Recruit Wizard API.
 4. `response_type` - This should always be the value 'code'.
 5. `state` - Pass a unique value in this field and it will be returned with the access code.
 

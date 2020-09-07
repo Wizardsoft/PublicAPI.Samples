@@ -51,7 +51,7 @@ For example making a request to any endpoint ex. https://api.wizardsoft.com/sand
 
 **Note: If you do not pass the accept header the API will not give you access to the endpoint!**
 
-Refreshing a token To stop users going through the authorization process again when their access tokens expire, you can programmatically refresh them on their behalf using the refresh token endpoint. This is the same as the authorization endpoint (https://api.wizardsoft.com/core/connect/token), except you pass a grant type of 'refresh_token' in the query string instead:
+Refreshing a token To stop users going through the authorization process again when their access tokens expire, you can programmatically refresh them on their behalf using the refresh token endpoint. This is the same as the authorization endpoint (https://api.wizardsoft.com/core/connect/token), except you pass a grant type of 'refresh_token' in the request body instead:
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `client_secret` - The API secret provided to you by `Recruit Wizard`.

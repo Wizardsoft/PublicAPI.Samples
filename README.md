@@ -19,7 +19,7 @@ They will be in touch if you have not already Signed the Recruit Wizard API Part
 If you require expediated access, or have any questions please contact [partners@recruitwizard.com](mailto:partners@recruitwizard.com)
 
 ## Authorization
-The first step to getting one of your users connected to the API is to request an access code. Your user should be taken to our authorization code URL and the following details should be included in the query string:
+The first step to getting one of your users connected to the API is to request an access code. Your user should be taken to our authorization code URL (https://api.wizardsoft.com/core/connect/authorize) and the following details should be included in the query string:
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `redirect_uri` - The URL the user should be redirected back to after they've confirmed they want to give you access to the API.
@@ -29,7 +29,7 @@ The first step to getting one of your users connected to the API is to request a
 
 Example: https://api.wizardsoft.com/core/connect/authorize?response_type=code&client_id={client_id}&redirect_uri={redirect_uri}&scope=read+write&state=1234
 
-If the authorization was successful, the user will be redirected back to the redirect_uri along with a token in the query string value code. Request a Token using your authorization code. The next step is to exchange your authorization code for a token. You'll need to pass the authorization code received to the token endpoint (https://api.wizardsoft.com/core/connect/token) using POST and include the following items in the query string:
+If the authorization was successful, the user will be redirected back to the redirect_uri along with a token in the query string value code. Request a Token using your authorization code. The next step is to exchange your authorization code for a token. You'll need to pass the authorization code received to the token endpoint (https://api.wizardsoft.com/core/connect/token) using POST and include the following items in the request body:
 
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `client_secret` - The API secret provided to you by `Recruit Wizard`.

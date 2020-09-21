@@ -53,11 +53,12 @@ For example making a request to any endpoint ex. https://api.wizardsoft.com/sand
 
 Refreshing a token To stop users going through the authorization process again when their access tokens expire, you can programmatically refresh them on their behalf using the refresh token endpoint. This is the same as the authorization endpoint (https://api.wizardsoft.com/core/connect/token), except you pass a grant type of 'refresh_token' in the request body instead:
 
+**Note: This endpoint only accepts data formated as application/x-www-form-urlencoded**
+
 1. `client_id` - The API key provided to you by `Recruit Wizard`.
 2. `client_secret` - The API secret provided to you by `Recruit Wizard`.
 3. `grant_type` - The grant type you are requesting, in this case, the value should always be 'refresh_token',
-4. `code` - The code that was returned in the authorization code request.
-5. `redirect_uri` - The redirect URI used in your call to the authorization endpoint.
+4. `refresh_token` - The refresh token that was returned in the token request.
 
 When this call is made successfully an access token, refresh token and token expiry will be passed back in JSON format:
 1. `access_token` - The user access token.
